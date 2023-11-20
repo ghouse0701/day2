@@ -1,18 +1,9 @@
-stage('Terraform Init') {
-            steps {
-                    // Initialize Terraform
-                        sh 'terraform init'
-                }
-            }
-  stage('Terraform Plan') {
-            steps {
-                    // Plan Terraform
-                        sh 'terraform plan'
-                }
-            }
-  stage('Terraform Apply') {
-            steps {
-                    // Apply Terraform changes
-                        sh 'terraform apply -auto-approve'
-                }
-            }
+resource "local_file" "my_pets" {
+filename = "Pets.txt"
+content = "I Hate Pets!"
+}
+resource "random_pet" "my_pets" {
+prefix = "Miss"
+separator = "."
+length = "1"
+}
