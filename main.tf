@@ -1,6 +1,6 @@
 resource "local_file" "my_pets" {
-filename = "Pets.txt"
-content = "I Hate Pets!"
+filename = var.filename
+content = var.content
 }
 resource "random_pet" "my_pets" {
 prefix = "Miss"
